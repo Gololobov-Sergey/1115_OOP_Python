@@ -124,7 +124,7 @@ class Job:
 
 
 job = Job("Programmer", 1000)
-human = Human("Anton", job=job)
+human = Human(input("Name = "), job=job)
 for day in range(366):
     if human.is_alive() == False:
         break
