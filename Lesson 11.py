@@ -16,6 +16,6 @@ responce = requests.get("https://coinmarketcap.com/")
 
 from bs4 import BeautifulSoup
 soup = BeautifulSoup(responce.text, features="html.parser")
-# soup_list = str(soup.find("div", {"class", "sc-b3fc6b7-0"}).find_all("span")[0]).split("$")[1].split("</span>")[0]
-soup_list = soup.find_all("span", {"class", "sc-b3fc6b7-0"})
+soup_list = soup.find("div", {"class", "sc-b3fc6b7-0"}).next_element.text
+# soup_list = soup.find_all("sc-b3fc6b7-0 dzgUIj rise")
 print(soup_list)
